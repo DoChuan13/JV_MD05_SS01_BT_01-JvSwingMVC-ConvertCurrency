@@ -28,7 +28,7 @@ public class ConvertController {
             switch (type) {
                 case "usd" -> {
                     result = value * rate;
-                    model.addAttribute(RESULT, result);
+                    model.addAttribute(RESULT, Float.valueOf(result).longValue());
                     return "convert";
                 }
                 case "vnd" -> {
@@ -36,7 +36,7 @@ public class ConvertController {
                         model.addAttribute(RESULT, "Rate Value is 0");
                     } else {
                         result = value / rate;
-                        model.addAttribute(RESULT, result);
+                        model.addAttribute(RESULT, Float.valueOf(result).longValue());
                     }
                     return "convert";
                 }
